@@ -15,15 +15,15 @@ import AndroIc from './assets/devicon_androidstudio-wordmark.svg'
 function App() {
   return (
     <>
-      <div className="flex flex-col items-center my-50 mx-60 gap-50 min-h-screen">
+      <div className="flex flex-col items-center my-12 md:my-50 sm:mx-10 md:mx-15 lg:mx-30 xl:mx-40 2xl:mx-60 gap-50 min-h-screen">
         {/* Home */}
-        <div id="home" className="flex justify-between items-center">
+        <div id="home" className="flex flex-col-reverse md:flex-row md:justify-between items-center">
           {/* Introduction */}
-          <div className="flex flex-col gap-5 mr-24">
-            <p className="text-3xl uppercase font-bold font-primary">
+          <div className="flex flex-col gap-5 items-center text-center mt-12 md:text-left md:mr-24 md:mt-0 md:items-start">
+            <p className="text-2xl sm:text-3xl uppercase font-bold font-primary">
               an informatics undergraduate
             </p>
-            <p className="text-lg font-secondary text-gray-500">
+            <p className="text-md mx-8 sm:mx-0 sm:text-lg font-secondary text-gray-500">
               Hi! I'm Moreno Pradita, an Informatics student interested in software development and machine learning.
             </p>
 
@@ -33,16 +33,16 @@ function App() {
                      transition-transform duration-200 hover:scale-105'>
                 <img src={Git} alt="Git Logo" />
               </a>
-              <a href="www.linkedin.com/in/moreno-pradita-49b42828a">
-                <img src={Linked} alt="Linked in Logo" className='cursor-pointer 
-                     transition-transform duration-200 hover:scale-105' />
+              <a href="https://www.linkedin.com/in/moreno-pradita-49b42828a" target='_blank' className='cursor-pointer'>
+                <img src={Linked} alt="Linked in Logo" className="
+                     transition-transform duration-200 hover:scale-105" />
               </a>
             </div>
           </div>
 
           {/* Photos */}
           <div className="shrink-0">
-            <img src="/4x6.JPG" alt="4x6" className="w-60 h-60 rounded-full object-cover" />
+            <img src="/4x6.JPG" alt="4x6" className="w-50 h-50 md:w-60 md:h-60 rounded-full object-cover" />
           </div>
         </div>
 
@@ -66,20 +66,16 @@ function App() {
         </div>
 
         {/* Projects */}
-        <div id="projects" className='flex flex-col gap-52'>
+        {/* <div id="projects" className='flex flex-col gap-52'>
           <div className='flex flex-col'>
             <p className="text-3xl uppercase font-bold font-primary">
               projects
             </p>
-            {/* Project 1 */}
             <div className='flex mt-8 justify-between'>
-              {/* Images */}
               <div className='flex flex-col gap-5'>
                 <img src="/project-1-a.png" alt="project-1-a" />
                 <img src="/project-1-b.png" alt="project-1-b" />
               </div>
-
-              {/* Title Project 1 */}
               <div className='flex flex-col gap-7 w-1/2 text-center items-center'>
                 <p className='font-semibold text-2xl font-primary'>
                   UMN Mentoring Profile
@@ -110,9 +106,7 @@ function App() {
             </div>
           </div>
 
-          {/* Title Project 2 */}
           <div className='flex justify-between'>
-
             <div className='flex flex-col gap-7 w-1/2 text-center items-center'>
               <p className='font-semibold text-2xl font-primary'>
                 Co Waste
@@ -121,13 +115,10 @@ function App() {
                 A mobile application that encourages users to recycle by converting their food waste into reward points.
                 These points can be exchanged for various products or discounts, promoting sustainable habits and reducing household waste.
               </p>
-
               <div className='flex flex-col items-center gap-12'>
-
                 <div>
                   <img src={figmac} alt="icon-ts" />
                 </div>
-
                 <a href="https://www.figma.com/proto/rgtHJHgombG6W97CAwf0XL?node-id=93-6153&t=GLFWyK4rvwvZviTu-6" target="_blank" rel="noopener noreferrer">
                   <button className="flex space-x-2.5 bg-black w-fit p-2 rounded-lg cursor-pointer 
                      transition-transform duration-200 hover:scale-105">
@@ -135,11 +126,9 @@ function App() {
                     <img src={linkIc} alt="hyperlinkIc" />
                   </button>
                 </a>
-
               </div>
             </div>
 
-            {/* Images */}
             <div className='flex gap-7'>
               <img src="/project-2-a.png" alt="project-2-a" />
               <img src="/project-2-b.png" alt="project-2-b" />
@@ -147,15 +136,11 @@ function App() {
           </div>
         </div>
 
-        {/* Project 3 */}
         <div className='flex mt-8 justify-between'>
-          {/* Images */}
           <div className='flex gap-5'>
             <img src="/project-3-a.png" alt="project-1-a" />
             <img src="/project-3-b.png" alt="project-1-b" />
           </div>
-
-          {/* Title Project 3 */}
           <div className='flex flex-col gap-7 w-1/2 text-center items-center'>
             <p className='font-semibold text-2xl font-primary'>
               UMN Mentoring Profile
@@ -164,7 +149,6 @@ function App() {
               A mobile e-commerce application developed to digitalize a local bike shop's operations. The app enables the shop to manage products, process customer orders,
               and generate financial reports, helping improve efficiency and business growth. <i>(Currently under development)</i>
             </p>
-
             <div className='flex flex-col items-center gap-12'>
 
               <div className='flex space-x-5'>
@@ -175,8 +159,8 @@ function App() {
               <ComingSoonModal />
             </div>
           </div>
-        </div>
-      </div>
+        </div> */}
+      </div >
     </>
   );
 }

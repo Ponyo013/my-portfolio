@@ -1,16 +1,13 @@
-// Components
-import ComingSoonModal from "./components/ComingSoonModal";
+
+
+// Data
+import { projects } from "./Data/projectData"
 
 // Icon
 import Git from './assets/mdi_github.svg';
 import Linked from './assets/mdi_linkedin.svg'
-import Ts from './assets/devicon_typescript.svg'
-import Rs from './assets/devicon_react.svg'
-import Vt from './assets/vscode-icons_file-type-vite.svg'
 import linkIc from './assets/flowbite_link-outline.svg'
-import figmac from './assets/logos_figma.svg'
-import KotlinIc from './assets/material-icon-theme_kotlin.svg'
-import AndroIc from './assets/devicon_androidstudio-wordmark.svg'
+
 
 function App() {
   return (
@@ -66,110 +63,77 @@ function App() {
         </div>
 
         {/* Projects */}
-        <div id="projects" className='flex flex-col gap-52'>
+        <div id="projects" className='flex flex-col'>
           <div className='flex flex-col items-center lg:items-start'>
             <p className="text-2xl lg:text-3xl uppercase font-bold font-primary">
               projects
             </p>
 
-            {/* PROJECT - 1*/}
-            <div className='flex flex-col gap-8 md:gap-12 items-center lg:items-start lg:gap-0 mt-8 lg:flex-row lg:justify-between'>
-              <div className='flex flex-col mx-12 lg:mx-0 gap-5'>
-                <img src="/project-1-a.png" alt="project-1-a" />
-                <img src="/project-1-b.png" alt="project-1-b" />
-              </div>
-              <div className='flex flex-col gap-5 lg:gap-7 mx-12 lg:mx-0 lg:w-1/2 text-center items-center'>
-                <p className='font-semibold text-xl md:text-2xl font-primary'>
-                  UMN Mentoring Profile
-                </p>
-                <p className='text-sm md:text-lg lg:text-lg font-secondary text-gray-500'>
-                  A web-based platform designed to display event schedules for the mentoring program and manage participant group data.
-                  The system includes search and filtering features to help mentors and administrators efficiently navigate and organize participant information.
-                </p>
+            <div className="flex flex-col gap-52">
+              {projects.map((project, index) => (
+                <div
+                  key={project.id}
+                  className={`flex flex-col ${index % 2 !== 0 ? "lg:flex-row-reverse" : "lg:flex-row"
+                    } gap-8 md:gap-12 items-center lg:items-start lg:gap-0 mt-8 lg:justify-between`}
+                >
+                  {/* IMAGE SECTION */}
+                  {project.type === "web" ? (
+                    // Web layout → stacked images
+                    <div className="flex flex-col mx-12 lg:mx-0 gap-5">
+                      {project.images.map((img, i) => (
+                        <img
+                          key={i}
+                          src={img}
+                          alt={`${project.title}-${i}`}
+                          className="w-full h-auto object-contain"
+                        />
+                      ))}
+                    </div>
+                  ) : (
+                    // Mobile layout → side-by-side
+                    <div className="flex flex-col sm:flex-row gap-7 mx-14 lg:mx-0 items-center justify-center">
+                      {project.images.map((img, i) => (
+                        <img
+                          key={i}
+                          src={img}
+                          alt={`${project.title}-${i}`}
+                          className="w-full sm:w-1/2 md:w-full h-auto object-contain"
+                        />
+                      ))}
+                    </div>
+                  )}
 
-                <div className='flex flex-col items-center gap-12'>
-                  <div className='flex space-x-5'>
-                    <img src={Ts} alt="icon-ts" />
-                    <img src={Rs} alt="Icon-rs" />
-                    <img src={Vt} alt="Icon-Vt" />
+                  {/* TEXT SECTION */}
+                  <div className="flex flex-col gap-5 lg:gap-7 mx-12 lg:mx-0 lg:w-1/2 text-center items-center">
+                    <p className="font-semibold text-xl md:text-2xl font-primary">
+                      {project.title}
+                    </p>
+                    <p className="text-sm md:text-lg lg:text-lg font-secondary text-gray-500">
+                      {project.description}
+                    </p>
+
+                    <div className="flex flex-col items-center gap-12">
+                      <div className="flex space-x-5">
+                        {project.icons.map((icon, i) => (
+                          <img key={i} src={icon} alt={`icon-${i}`} />
+                        ))}
+                      </div>
+
+                      <a href={project.link} target="_blank" rel="noopener noreferrer">
+                        <button className="flex space-x-2.5 bg-black w-fit p-2 rounded-lg cursor-pointer transition-transform duration-200 hover:scale-105">
+                          <p className="text-white font-bold font-secondary">
+                            {project.buttonText}
+                          </p>
+                          <img src={linkIc} alt="hyperlinkIc" />
+                        </button>
+                      </a>
+                    </div>
                   </div>
-
-                  <a href="https://mentoring.umn.ac.id/" target="_blank" rel="noopener noreferrer">
-                    <button className="flex space-x-2.5 bg-black w-fit p-2 rounded-lg cursor-pointer 
-                     transition-transform duration-200 hover:scale-105">
-                      <p className="text-white font-bold font-secondary">Live Demo</p>
-                      <img src={linkIc} alt="hyperlinkIc" />
-                    </button>
-                  </a>
-
                 </div>
-              </div>
-            </div>
-          </div>
-
-          {/* PROJECT - 2 */}
-          <div className='flex flex-col-reverse gap-8 md:gap-12 items-center lg:items-start lg:gap-0 mt-8 lg:flex-row lg:justify-between'>
-            <div className='flex flex-col gap-7 mx-14 lg:mx-0 lg:w-1/2 text-center items-center'>
-              <p className='font-semibold text-xl md:text-2xl font-primary'>
-                Co Waste
-              </p>
-              <p className='text-sm md:text-lg lg:text-lg font-secondary text-gray-500'>
-                A mobile application that encourages users to recycle by converting their food waste into reward points.
-                These points can be exchanged for various products or discounts, promoting sustainable habits and reducing household waste.
-              </p>
-              <div className='flex flex-col items-center gap-12'>
-                <div>
-                  <img src={figmac} alt="icon-ts" />
-                </div>
-                <a href="https://www.figma.com/proto/rgtHJHgombG6W97CAwf0XL?node-id=93-6153&t=GLFWyK4rvwvZviTu-6" target="_blank" rel="noopener noreferrer">
-                  <button className="flex space-x-2.5 bg-black w-fit p-2 rounded-lg cursor-pointer 
-                     transition-transform duration-200 hover:scale-105">
-                    <p className="text-white font-bold font-secondary">Prototype</p>
-                    <img src={linkIc} alt="hyperlinkIc" />
-                  </button>
-                </a>
-              </div>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-7 mx-14 lg:mx-0 items-center justify-center">
-              <img
-                src="/project-2-a.png"
-                alt="project-2-a"
-                className="w-full sm:w-1/2 md:w-full h-auto object-contain"
-              />
-              <img
-                src="/project-2-b.png"
-                alt="project-2-b"
-                className="w-full sm:w-1/2 md::w-full h-auto object-contain"
-              />
+              ))}
             </div>
           </div>
         </div>
-
-        {/* <div className='flex mt-8 justify-between'>
-          <div className='flex gap-5'>
-            <img src="/project-3-a.png" alt="project-1-a" />
-            <img src="/project-3-b.png" alt="project-1-b" />
-          </div>
-          <div className='flex flex-col gap-7 w-1/2 text-center items-center'>
-            <p className='font-semibold text-2xl font-primary'>
-              UMN Mentoring Profile
-            </p>
-            <p className='text-lg font-secondary text-gray-500'>
-              A mobile e-commerce application developed to digitalize a local bike shop's operations. The app enables the shop to manage products, process customer orders,
-              and generate financial reports, helping improve efficiency and business growth. <i>(Currently under development)</i>
-            </p>
-            <div className='flex flex-col items-center gap-12'>
-
-              <div className='flex space-x-5'>
-                <img src={AndroIc} alt="icon-ts" />
-                <img src={KotlinIc} alt="Icon-rs" />
-              </div>
-
-              <ComingSoonModal />
-            </div>
-          </div>
-        </div> */}
       </div >
     </>
   );

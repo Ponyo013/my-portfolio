@@ -47,12 +47,12 @@ function App() {
         </div>
 
         {/* About */}
-        <div id="about" className='mr-24'>
+        <div id="about" className='sm:mr-3 md:mr-6 lg:mr-12 2xl:mr-24'>
           <div className='flex flex-col w-full gap-5'>
-            <p className="text-3xl uppercase font-bold font-primary">
+            <p className="text-center md:text-left text-2xl sm:text-3xl uppercase font-bold font-primary">
               about me
             </p>
-            <div className='font-secondary text-gray-500 text-lg'>
+            <div className='mx-8 sm:mx-0 text-md font-secondary text-gray-500 sm:text-lg'>
               <p>
                 Throughout my studies, I have worked on various projects, such as:
               </p>
@@ -66,7 +66,7 @@ function App() {
         </div>
 
         {/* Projects */}
-        {/* <div id="projects" className='flex flex-col gap-52'>
+        <div id="projects" className='flex flex-col gap-52'>
           <div className='flex flex-col'>
             <p className="text-3xl uppercase font-bold font-primary">
               projects
@@ -106,7 +106,7 @@ function App() {
             </div>
           </div>
 
-          <div className='flex justify-between'>
+          {/* <div className='flex justify-between'>
             <div className='flex flex-col gap-7 w-1/2 text-center items-center'>
               <p className='font-semibold text-2xl font-primary'>
                 Co Waste
@@ -158,8 +158,8 @@ function App() {
 
               <ComingSoonModal />
             </div>
-          </div>
-        </div> */}
+          </div> */}
+        </div>
       </div >
     </>
   );

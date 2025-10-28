@@ -67,26 +67,27 @@ function App() {
 
         {/* Projects */}
         <div id="projects" className='flex flex-col gap-52'>
-          <div className='flex flex-col'>
-            <p className="text-3xl uppercase font-bold font-primary">
+          <div className='flex flex-col items-center lg:items-start'>
+            <p className="text-2xl lg:text-3xl uppercase font-bold font-primary">
               projects
             </p>
-            <div className='flex mt-8 justify-between'>
-              <div className='flex flex-col gap-5'>
+
+            {/* PROJECT - 1*/}
+            <div className='flex flex-col gap-8 md:gap-12 items-center lg:items-start lg:gap-0 mt-8 lg:flex-row lg:justify-between'>
+              <div className='flex flex-col mx-12 lg:mx-0 gap-5'>
                 <img src="/project-1-a.png" alt="project-1-a" />
                 <img src="/project-1-b.png" alt="project-1-b" />
               </div>
-              <div className='flex flex-col gap-7 w-1/2 text-center items-center'>
-                <p className='font-semibold text-2xl font-primary'>
+              <div className='flex flex-col gap-5 lg:gap-7 mx-12 lg:mx-0 lg:w-1/2 text-center items-center'>
+                <p className='font-semibold text-xl md:text-2xl font-primary'>
                   UMN Mentoring Profile
                 </p>
-                <p className='text-lg font-secondary text-gray-500'>
+                <p className='text-sm md:text-lg lg:text-lg font-secondary text-gray-500'>
                   A web-based platform designed to display event schedules for the mentoring program and manage participant group data.
                   The system includes search and filtering features to help mentors and administrators efficiently navigate and organize participant information.
                 </p>
 
                 <div className='flex flex-col items-center gap-12'>
-
                   <div className='flex space-x-5'>
                     <img src={Ts} alt="icon-ts" />
                     <img src={Rs} alt="Icon-rs" />
@@ -106,12 +107,13 @@ function App() {
             </div>
           </div>
 
-          {/* <div className='flex justify-between'>
-            <div className='flex flex-col gap-7 w-1/2 text-center items-center'>
-              <p className='font-semibold text-2xl font-primary'>
+          {/* PROJECT - 2 */}
+          <div className='flex flex-col-reverse gap-8 md:gap-12 items-center lg:items-start lg:gap-0 mt-8 lg:flex-row lg:justify-between'>
+            <div className='flex flex-col gap-7 mx-14 lg:mx-0 lg:w-1/2 text-center items-center'>
+              <p className='font-semibold text-xl md:text-2xl font-primary'>
                 Co Waste
               </p>
-              <p className='text-lg font-secondary text-gray-500'>
+              <p className='text-sm md:text-lg lg:text-lg font-secondary text-gray-500'>
                 A mobile application that encourages users to recycle by converting their food waste into reward points.
                 These points can be exchanged for various products or discounts, promoting sustainable habits and reducing household waste.
               </p>
@@ -129,14 +131,22 @@ function App() {
               </div>
             </div>
 
-            <div className='flex gap-7'>
-              <img src="/project-2-a.png" alt="project-2-a" />
-              <img src="/project-2-b.png" alt="project-2-b" />
+            <div className="flex flex-col sm:flex-row gap-7 mx-14 lg:mx-0 items-center justify-center">
+              <img
+                src="/project-2-a.png"
+                alt="project-2-a"
+                className="w-full sm:w-1/2 md:w-full h-auto object-contain"
+              />
+              <img
+                src="/project-2-b.png"
+                alt="project-2-b"
+                className="w-full sm:w-1/2 md::w-full h-auto object-contain"
+              />
             </div>
           </div>
         </div>
 
-        <div className='flex mt-8 justify-between'>
+        {/* <div className='flex mt-8 justify-between'>
           <div className='flex gap-5'>
             <img src="/project-3-a.png" alt="project-1-a" />
             <img src="/project-3-b.png" alt="project-1-b" />
@@ -158,8 +168,8 @@ function App() {
 
               <ComingSoonModal />
             </div>
-          </div> */}
-        </div>
+          </div>
+        </div> */}
       </div >
     </>
   );

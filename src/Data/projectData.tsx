@@ -1,6 +1,3 @@
-// Components
-import ComingSoonModal from "../components/ComingSoonModal";
-
 import Ts from '../assets/devicon_typescript.svg'
 import Rs from '../assets/devicon_react.svg'
 import Vt from '../assets/vscode-icons_file-type-vite.svg'

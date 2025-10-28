@@ -40,7 +40,7 @@ function App() {
 
           {/* Photos */}
           <div className="shrink-0">
-            <img src="/4x6.JPG" alt="4x6" className="w-50 h-50 md:w-60 md:h-60 rounded-full object-cover" />
+            <img src="/4x6.JPG" alt="4x6" className="w-50 h-50 md:w-60 md:h-60 rounded-full object-cover object-top" />
           </div>
         </div>
 

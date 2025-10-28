@@ -11,6 +11,19 @@ import linkIc from './assets/flowbite_link-outline.svg'
 
 
 function App() {
+  const scrollToProject = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - 80;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      });
+    }
+  };
+
+
   return (
     <>
       <div className="flex flex-col items-center my-12 md:my-50 sm:mx-10 md:mx-15 lg:mx-30 xl:mx-40 2xl:mx-60 gap-50 min-h-screen">
@@ -55,9 +68,40 @@ function App() {
                 Throughout my studies, I have worked on various projects, such as:
               </p>
               <ol className="list-[lower-alpha] list-inside mt-2 ml-6 space-y-1">
-                <li>Developing a website for the <span className='underline text-black!'>UMN Mentoring Organization</span>.</li>
-                <li>Designing a <span className='underline text-black!'>waste pickup application</span>.</li>
-                <li>Building a mobile e-commerce app for <span className='underline text-black!'>UMKM bike shops</span> with automated sentiment analysis.</li>
+                {projects.map((project, index) => {
+                  let textBefore = "";
+                  let textAfter = "";
+
+                  switch (index) {
+                    case 0:
+                      textBefore = "Developing a website for the ";
+                      break;
+                    case 1:
+                      textBefore = "Designing a ";
+                      break;
+                    case 2:
+                      textBefore = "Developing an ";
+                      textAfter = " website";
+                      break;
+                    case 3:
+                      textBefore = "Building a mobile e-commerce app for ";
+                      textAfter = " with automated sentiment analysis";
+                      break;
+                  }
+
+                  return (
+                    <li key={project.id}>
+                      {textBefore}
+                      <span
+                        className="underline text-black cursor-pointer"
+                        onClick={() => scrollToProject(project.title)}
+                      >
+                        {project.term}
+                      </span>
+                      {textAfter}.
+                    </li>
+                  );
+                })}
               </ol>
             </div>
           </div>
@@ -73,6 +117,7 @@ function App() {
             <div className="flex flex-col gap-52">
               {projects.map((project, index) => (
                 <div
+                  id={project.title}
                   key={project.id}
                   className={`flex flex-col ${index % 2 !== 0 ? "lg:flex-row-reverse" : "lg:flex-row"
                     } gap-8 md:gap-12 items-center lg:items-start lg:gap-0 mt-8 lg:justify-between`}

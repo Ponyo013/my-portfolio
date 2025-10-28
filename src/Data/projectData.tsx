@@ -12,6 +12,7 @@ export const projects = [
         id: 1,
         type: "web",
         title: "UMN Mentoring Profile",
+        term: "UMN Mentoring Organization",
         description:
             "A web-based platform designed to display event schedules for the mentoring program and manage participant group data. \
             The system includes search and filtering features to help mentors and administrators efficiently navigate and organize participant information.",
@@ -24,6 +25,7 @@ export const projects = [
         id: 2,
         type: "mobile",
         title: "Co Waste",
+        term: "waste pickup application",
         description:
             "A mobile application that encourages users to recycle by converting their food waste into reward points. \
             These points can be exchanged for various products or discounts, promoting sustainable habits and reducing household waste.",
@@ -36,6 +38,7 @@ export const projects = [
         id: 3,
         type: "web",
         title: "Evenlix",
+        term: "event management system",
         description:
             "Evenlix is a simple event management website that features both client and admin interfaces. On the client side, \
             users can browse and purchase tickets for various events, as well as view their event registration history through their profile. \
@@ -49,6 +52,7 @@ export const projects = [
         id: 4,
         type: "mobile",
         title: "UMKM Bike Shop",
+        term: " UMKM bike shop",
         description:
             "A mobile e-commerce application developed to digitalize a local bike shop's operations. \
             The app enables the shop to manage products, process customer orders, and generate financial reports, \
@@ -59,3 +63,4 @@ export const projects = [
         link: "",
     },
 ];
+

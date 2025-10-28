@@ -1,4 +1,5 @@
-
+// Component
+import ComingSoonModal from "./components/ComingSoonModal";
 
 // Data
 import { projects } from "./Data/projectData"
@@ -85,7 +86,7 @@ function App() {
                           key={i}
                           src={img}
                           alt={`${project.title}-${i}`}
-                          className="w-full h-auto object-contain"
+                          className="w-[407px] h-auto object-contain"
                         />
                       ))}
                     </div>
@@ -97,7 +98,7 @@ function App() {
                           key={i}
                           src={img}
                           alt={`${project.title}-${i}`}
-                          className="w-full sm:w-1/2 md:w-full h-auto object-contain"
+                          className="w-[200px] h-auto object-contain"
                         />
                       ))}
                     </div>
@@ -119,20 +120,32 @@ function App() {
                         ))}
                       </div>
 
-                      <a href={project.link} target="_blank" rel="noopener noreferrer">
-                        <button className="flex space-x-2.5 bg-black w-fit p-2 rounded-lg cursor-pointer transition-transform duration-200 hover:scale-105">
-                          <p className="text-white font-bold font-secondary">
-                            {project.buttonText}
-                          </p>
-                          <img src={linkIc} alt="hyperlinkIc" />
-                        </button>
-                      </a>
+                      {project.buttonText === "" ? (
+                        <ComingSoonModal />
+                      ) : (
+                        <a href={project.link} target="_blank" rel="noopener noreferrer">
+                          <button className="flex space-x-2.5 bg-black w-fit p-2 rounded-lg cursor-pointer transition-transform duration-200 hover:scale-105">
+                            <p className="text-white font-bold font-secondary">
+                              {project.buttonText}
+                            </p>
+                            <img src={linkIc} alt="hyperlinkIc" />
+                          </button>
+                        </a>
+                      )}
+
                     </div>
                   </div>
                 </div>
               ))}
             </div>
           </div>
+        </div>
+
+        {/* End Text */}
+        <div className="flex items-center">
+          <p className="text-2xl text-center mx-12 sm:mx-0 font-primary font-normal">
+            I’m constantly learning and more projects will be added soon.
+          </p>
         </div>
       </div >
     </>

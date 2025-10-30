@@ -26,7 +26,7 @@ function App() {
 
   return (
     <>
-      <div className="flex flex-col items-center my-12 md:my-50 sm:mx-10 md:mx-15 lg:mx-30 xl:mx-40 2xl:mx-60 gap-50 min-h-screen">
+      <div className="flex flex-col items-center my-12 md:my-50 sm:mx-10 md:mx-15 lg:mx-30 xl:mx-40 xl:items-start 2xl:mx-60 gap-50 min-h-screen">
         {/* Home */}
         <div id="home" className="flex flex-col-reverse md:flex-row md:justify-between items-center">
           {/* Introduction */}
@@ -131,7 +131,7 @@ function App() {
                           key={i}
                           src={img}
                           alt={`${project.title}-${i}`}
-                          className="w-[407px] h-auto object-contain"
+                          className="w-[407px] 2xl:w-[557px] h-auto object-contain"
                         />
                       ))}
                     </div>
@@ -143,7 +143,7 @@ function App() {
                           key={i}
                           src={img}
                           alt={`${project.title}-${i}`}
-                          className="w-[200px] h-auto object-contain"
+                          className="w-[200px] 2xl:w-[300px] h-auto object-contain"
                         />
                       ))}
                     </div>
@@ -177,7 +177,6 @@ function App() {
                           </button>
                         </a>
                       )}
-
                     </div>
                   </div>
                 </div>
@@ -185,14 +184,14 @@ function App() {
             </div>
           </div>
         </div>
-
-        {/* End Text */}
-        <div className="flex items-center">
-          <p className="text-2xl text-center mx-12 sm:mx-0 font-primary font-normal">
-            I’m constantly learning and more projects will be added soon.
-          </p>
-        </div>
       </div >
+
+      {/* End Text */}
+      <div className="flex justify-center mb-50">
+        <p className="text-2xl text-center mx-12 sm:mx-0 font-primary font-normal">
+          I’m constantly learning and more projects will be added soon.
+        </p>
+      </div>
     </>
   );
 }

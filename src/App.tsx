@@ -131,7 +131,7 @@ function App() {
                           key={i}
                           src={img}
                           alt={`${project.title}-${i}`}
-                          className="w-[407px] 2xl:w-[557px] h-auto object-contain"
+                          className="w-[407px] h-auto object-contain"
                         />
                       ))}
                     </div>
@@ -143,7 +143,7 @@ function App() {
                           key={i}
                           src={img}
                           alt={`${project.title}-${i}`}
-                          className="w-[200px] 2xl:w-[300px] h-auto object-contain"
+                          className="w-[200px] h-auto object-contain"
                         />
                       ))}
                     </div>
